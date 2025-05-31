@@ -24,7 +24,7 @@ class Producto {
 class DetallePedido {
 - cantidad: int
 - precio : double
-- producto : Producto
+- producto : String
 }
 
 Cliente "1" -- "*" Pedido : Realiza

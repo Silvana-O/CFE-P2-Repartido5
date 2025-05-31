@@ -30,7 +30,7 @@ class Egresado extends Usuario {
 class Publicacion {
 - idPublicacion : int
 - texto : String
-- autorPublicacion : Usuario
+- autorPublicacion : int
 - comentarios : List
 + agregarComentario(): void
 }
@@ -38,8 +38,8 @@ class Publicacion {
 class Comentario {
 - idComentario : int
 - textoComentario : String
-- autorComentario : Usuario
-- publicacion : Publicacion
+- autorComentario : int
+- publicacion : int
 }
 
 class Grupo {
