@@ -23,15 +23,15 @@ public class Empleado {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public String getCargo() {
-        return cargo;
+        return this.cargo;
     }
 
     public double getSueldoBase() {
-        return sueldoBase;
+        return this.sueldoBase;
     }
 
     public void setNombre(String nombre) {

@@ -11,15 +11,15 @@ public class Cuenta {
     }
 
     public String getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public String getTitular() {
-        return titular;
+        return this.titular;
     }
 
     public double getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
     public void depositar(double monto) {

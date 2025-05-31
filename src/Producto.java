@@ -36,15 +36,15 @@ public class Producto {
     }
 
     public int getStock() {
-        return stock;
+        return this.stock;
     }
 
     public double getPrecio() {
-        return precio;
+        return this.precio;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setPrecio(double nuevoPrecio) {
