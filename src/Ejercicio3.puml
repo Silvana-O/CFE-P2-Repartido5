@@ -1,0 +1,56 @@
+@startuml
+
+class Persona {
+- IdPersona : int
+- nombre : String
+}
+
+class Paciente extends Persona {
+- historial : Historial
+- turnos : List
++ agendarTurno(): void
++ obtenerHistorial(): List
++ obtenerTurnos(): List
+}
+
+class Medico extends Persona {
+- area : Area
+- pacientes : List
++ agregarPaciente(): void
++ obtenerPacientes(): List
++ obtenerTurnos(): List
+}
+
+class Turno {
+- fechaTurno : Date
+- horaTurno : Time
++ describirTurno(): String
+}
+
+class Area {
+- nombre: String
+- medicos: List
++ agregarMedico(): void
++ mostrarMedicos(): List
+}
+
+class Historial {
+- entradas : List
++ agregarEntrada(): void
++ obtenerEntradas(): List
++ resumenHistorial(): String
+}
+
+class EntradaHistorial {
+- fecha : Date
+- descripcion : String
++ mostrarEntrada(): String
+}
+
+Paciente "1" -- "1" Historial
+Historial "1" -- "*" EntradaHistorial
+Paciente "1" -- "*" Turno : Tiene
+Medico "1" -- "*" Turno : Atiende
+Medico "*" -- "1" Area : Pertenece
+
+@enduml

@@ -1,0 +1,58 @@
+@startuml
+
+class Usuario {
+- idUsuario : int
+- nombre : String
+- publicaciones : List
+- seguidores : List
+- seguidos : List
+- grupos : List
++ publicar(): void
++ comentar(): void
++ seguirUsuario(): void
++ unirseAGrupo(): void
+}
+
+class Estudiante extends Usuario {
+- añoIngreso : int
+- carrera : String
+}
+
+class Docente extends Usuario {
+- departamento : String
+}
+
+class Egresado extends Usuario {
+- añoEngreso : int
+- carreraEgreso : String
+}
+
+class Publicacion {
+- idPublicacion : int
+- texto : String
+- autorPublicacion : Usuario
+- comentarios : List
++ agregarComentario(): void
+}
+
+class Comentario {
+- idComentario : int
+- textoComentario : String
+- autorComentario : Usuario
+- publicacion : Publicacion
+}
+
+class Grupo {
+- idGrupo : int
+- nombre : String
+- miembros : List
++ agregarMiembro(): void
+}
+
+Usuario "1" -- "*" Publicacion : Crea
+Usuario "1" -- "*" Comentario : Escribe
+Publicacion "1" -- "*" Comentario : Recibe
+Usuario "*" -- "*" Usuario : Sigue
+Usuario "*" -- "*" Grupo : Participa
+
+@enduml

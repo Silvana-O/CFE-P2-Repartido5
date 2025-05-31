@@ -1,0 +1,30 @@
+@startuml
+
+class Contacto {
+- nombre : String
+- telefono : String
+- correo : String
+- etiquetas: String
++ agregarEtiqueta() : void
++ eliminarEtiqueta() : void
++ tieneEtiqueta(): boolean
+}
+
+class Etiqueta {
+- nombre : String
++ getNombre() : String
++ equals() : boolean
+}
+
+class Agenda {
+- contactos : List
++ agregarContacto() : void
++ eliminarContacto() : void
++ buscarPorNombre(): void
++ buscarPorEtiqueta(): List
++ mostrarTodos(): List
+}
+
+Contacto "*" -- "*" Etiqueta : Tiene
+Agenda "1" -- "*" Contacto : Tiene
+@enduml
